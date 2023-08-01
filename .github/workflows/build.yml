@@ -28,3 +28,42 @@ jobs:
           mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
           -Dsonar.projectKey=iamneo-production_bcebcbfbcdcecbccfaabacdbcdcefbacdc
           -Dsonar.login=811c9a490983734401ba4e491eaefc8bfa7281de
+import io.cucumber.java.en.*;
+
+public class LoginStepDefinitions {
+
+    // Implement the necessary WebDriver and page object references here
+
+    @Given("the user is on the Home page")
+    public void theUserIsOnHomePage() {
+        // Code to navigate to the Home page
+    }
+
+    @When("the user navigates to the Login page")
+    public void theUserNavigatesToLoginPage() {
+        // Code to navigate to the Login page
+    }
+
+    @When("the user enters username and password")
+    public void theUserEntersUsernameAndPassword() {
+        // Code to enter valid user credentials (username and password)
+    }
+
+    @Then("the successful login message is displayed with text: {string}")
+    public void successfulLoginMessageIsDisplayed(String expectedMessage) {
+        // Code to verify the successful login message
+        // Get the actual message displayed on the page and compare with the expectedMessage
+        // You can use assertion methods to compare the messages, e.g., assertEquals or assertThat
+        // For demonstration purposes, let's assume a method getSuccessfulLoginMessage() that returns the actual message displayed.
+        String actualMessage = getSuccessfulLoginMessage();
+        // Assuming getSuccessfulLoginMessage() retrieves the actual message displayed after login.
+        assertEquals(expectedMessage, actualMessage);
+    }
+
+    // Helper method to simulate the actual retrieval of the successful login message
+    private String getSuccessfulLoginMessage() {
+        // Implement the logic to retrieve the successful login message from the page
+        // For simplicity, return a fixed message as an example
+        return "You have successfully logged into your account! There are multiple discount offers waiting for you!!";
+    }
+}
